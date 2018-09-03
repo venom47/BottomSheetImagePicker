@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">BottomSheetImagePicker</string>
+
+    <string name="done">Done</string>
+    <string name="title">Choose image</string>
+</resources>

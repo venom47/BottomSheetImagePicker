@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<io.github.venomfortyseven.bottomsheetimagepicker.view.SquareFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    >
+
+    <io.github.venomfortyseven.bottomsheetimagepicker.view.SquareImageView
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"/>
+
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/check_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"/>
+
+</io.github.venomfortyseven.bottomsheetimagepicker.view.SquareFrameLayout>
