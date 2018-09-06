@@ -98,6 +98,7 @@ public class ImageResultActivity extends AppCompatActivity {
     public void finish() {
         overridePendingTransition(0, 0);
         super.finish();
+        imageResultListener = null;
     }
 
 
