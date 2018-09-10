@@ -22,6 +22,10 @@ import java.util.Locale;
 public class ImageCompressor {
 
 
+    public static int DEFAULT_MAX_Width = 900;
+    public static int DEFAULT_MAX_Height = 900;
+    public static int DEFAULT_QUALITY = 80;
+
     private int maxWidth;
     private int maxHeight;
     private Bitmap.CompressFormat compressFormat;
@@ -41,7 +45,7 @@ public class ImageCompressor {
     }
 
 
-    private File compress(@NonNull File imageFile,
+    public static File compress(@NonNull File imageFile,
                           @IntRange(from = 1, to = Integer.MAX_VALUE) int maxWidth,
                           @IntRange(from = 1, to = Integer.MAX_VALUE) int maxHeight,
                           @NonNull Bitmap.CompressFormat compressFormat,
@@ -67,7 +71,7 @@ public class ImageCompressor {
     }
 
 
-    private Bitmap scaledBitmap(@NonNull File imageFile,
+    public static Bitmap scaledBitmap(@NonNull File imageFile,
                                 @IntRange(from = 1, to = Integer.MAX_VALUE) int maxWidth,
                                 @IntRange(from = 1, to = Integer.MAX_VALUE) int maxHeight) throws IOException {
         String imagePath = imageFile.getAbsolutePath();
@@ -89,7 +93,7 @@ public class ImageCompressor {
     }
 
 
-    private int calculateInSampleSize(@NonNull BitmapFactory.Options options,
+    public static int calculateInSampleSize(@NonNull BitmapFactory.Options options,
                                       @IntRange(from = 1, to = Integer.MAX_VALUE) int maxWidth,
                                       @IntRange(from = 1, to = Integer.MAX_VALUE) int maxHeight) {
         int inSampleSize = 1;
@@ -106,10 +110,10 @@ public class ImageCompressor {
 
     public static class Builder {
 
-        private int maxWidth = 900;
-        private int maxHeight = 900;
+        private int maxWidth = DEFAULT_MAX_Width;
+        private int maxHeight = DEFAULT_MAX_Height;
         private Bitmap.CompressFormat compressFormat = Bitmap.CompressFormat.JPEG;
-        private int quality = 80;
+        private int quality = DEFAULT_QUALITY;
 
         public Builder maxWidth(@IntRange(from = 1, to = Integer.MAX_VALUE) int width) {
             maxWidth = width;
